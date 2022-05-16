@@ -60,21 +60,27 @@ public class MainGUI {
 
         // Obecny zestaw do wyswietlania
         currentPackage = new FlashcardPackage();
+            myDecksButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (ownSets.size()>0) {
+                        try {
+                            ownSets = Saving.readAll("saves");
+                            JFrame f = new MyDecksGUI(ownSets, currentPackage, startButton, easyMode, hardMode,
+                                    isCorrectLabel);
+                            f.setTitle("Moje fiszki");
+                            f.pack();
+                            f.setVisible(true);
+                        } catch (NullPointerException ed) {
 
-        myDecksButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame f = new MyDecksGUI(ownSets, currentPackage, startButton, easyMode, hardMode,
-                        isCorrectLabel);
-                f.setTitle("Moje fiszki");
-                f.pack();
-                f.setVisible(true);
-            }
-        });
-
+                        }
+                    }
+                }
+            });
         decksButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                basicSets = Saving.readAll("basicSets");
                 JFrame f = new SetsGUI(basicSets, currentPackage, startButton, easyMode, hardMode,
                         isCorrectLabel);
                 f.setTitle("Zestawy");
@@ -258,6 +264,7 @@ public class MainGUI {
         } else if (currentDeckLabel.getText().split("-")[0].equals(ownType)) {
             Saving.writeToFile(currentPackage);
         }
+
     }
 
     public void refresh(){
@@ -271,7 +278,11 @@ public class MainGUI {
                     null, options, null);
         }else{
             save();
-            int chosenMode = (int)(Math.random() * (2));
+            int chosenMode = 1;
+            if(currentPackage.getFlashcards().size() >= 4){
+                chosenMode = (int)(Math.random() * (2));
+            }
+
             if (chosenMode == 0){
                 hardMode.setVisible(false);
                 easyMode.setVisible(true);
@@ -350,8 +361,7 @@ public class MainGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        // Zad. 4 - (1/2) jedna linijka tutaj jest potrzebna, reszta nizej \/
-
+        // Zad. 4 (1/2) - jedna linijka kodu tutaj, reszta nizej \/
         frame.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
@@ -360,7 +370,7 @@ public class MainGUI {
 
             @Override
             public void windowClosing(WindowEvent e) {
-                // Zad. 4 - (2/2)
+                // Zad. 4 (2/2)
 
             }
 

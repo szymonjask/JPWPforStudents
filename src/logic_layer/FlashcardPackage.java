@@ -24,6 +24,11 @@ public class FlashcardPackage {
         this.name = name;
     }
 
+    public void makeNull(){
+        this.flashcards = null;
+        this.name = null;
+    }
+
     public String toString(){
         return name;
     }

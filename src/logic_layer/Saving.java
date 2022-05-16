@@ -120,8 +120,19 @@ public class Saving {
             }
             return sets;
         }catch(Exception e){
-            System.out.println("Blad przy wczytywaniu gotowych zestawow");
+            System.out.println("Blad przy wczytywaniu zestawow");
             return null;
+        }
+    }
+
+    public static void deleteFile(String fileName){
+        try {
+            File starting = new File(System.getProperty("user.dir"));
+            File myObj = new File(starting,"\\saves\\"+fileName+".csv");
+            myObj.delete();
+
+        }catch(Exception e){
+            System.out.println("Blad");
         }
     }
 

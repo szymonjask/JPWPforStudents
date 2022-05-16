@@ -45,7 +45,10 @@ public class findGUI extends JFrame {
                             FlashcardPackage pack = Saving.readBasic(name);
                             for (int j = 0; j < Objects.requireNonNull(pack).getFlashcards().size(); j++){
                                 if(find.equals(pack.getFlashcards().get(j).getWord())){
-                                    results.add(pack.getFlashcards().get(j).getTranslation());
+                                    String translate = pack.getFlashcards().get(j).getTranslation();
+                                    if (!results.contains(translate)) {
+                                        results.add(translate);
+                                    }
                                 }
                             }
                         }
@@ -56,7 +59,10 @@ public class findGUI extends JFrame {
                             FlashcardPackage pack = Saving.readFile(name);
                             for (int j = 0; j < Objects.requireNonNull(pack).getFlashcards().size(); j++){
                                 if(find.equals(pack.getFlashcards().get(j).getWord())){
-                                    results.add(pack.getFlashcards().get(j).getTranslation());
+                                    String translate = pack.getFlashcards().get(j).getTranslation();
+                                    if (!results.contains(translate)) {
+                                        results.add(translate);
+                                    }
                                 }
                             }
                         }

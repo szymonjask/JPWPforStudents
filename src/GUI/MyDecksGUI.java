@@ -20,7 +20,7 @@ public class MyDecksGUI extends JFrame {
 
     private FlashcardPackage currentPackage;
 
-    public MyDecksGUI(ArrayList<FlashcardPackage> Sets, FlashcardPackage curr, JButton startButton,
+    public MyDecksGUI(ArrayList<FlashcardPackage> Sets, FlashcardPackage currPack, JButton startButton,
                       JPanel easyMode, JPanel hardMode, JLabel isCorrect) {
         setContentPane(panel1);
         for(int j = 0; j < Sets.size(); j++){
@@ -32,7 +32,7 @@ public class MyDecksGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 FlashcardPackage toLoad = (FlashcardPackage) comboBox1.getSelectedItem();
-                curr.change(toLoad.getFlashcards(), toLoad.getName());
+                currPack.change(toLoad.getFlashcards(), toLoad.getName());
 
                 startButton.setEnabled(true);
                 easyMode.setVisible(false);
@@ -60,11 +60,18 @@ public class MyDecksGUI extends JFrame {
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                currPack.makeNull();
+                easyMode.setVisible(false);
+                hardMode.setVisible(false);
+                startButton.setEnabled(true);
+                //currLabel.setText("brak"); <--- Po zrobieniu drugiego zadania mozna odkomentowac
+                isCorrect.setText("");
                 FlashcardPackage deck = (FlashcardPackage) comboBox1.getSelectedItem();
                 JFrame f = new EditDeckGUI(deck);
                 f.setTitle("Edycja zestawu");
                 f.pack();
                 f.setVisible(true);
+                dispose();
                 f.addWindowListener(new WindowListener() {
                     @Override
                     public void windowOpened(WindowEvent e) {

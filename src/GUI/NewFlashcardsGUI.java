@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class NewFlashcardsGUI extends JFrame {
     private JPanel panel1;
@@ -45,6 +47,10 @@ public class NewFlashcardsGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(wordsList.size() > 0 && !nameField.getText().strip().isEmpty()){
+                    Set<Flashcard> set = new HashSet<>(wordsList);
+                    System.out.println(set);
+                    wordsList.clear();
+                    wordsList.addAll(set);
                     FlashcardPackage newDeck = new FlashcardPackage(wordsList, nameField.getText().strip());
                     Saving.writeToFile(newDeck);
                     nameField.setText("");

@@ -21,6 +21,7 @@ public class EditDeckGUI extends JFrame {
     private JPanel panel1;
     private JLabel whatIsEditedLabel;
 
+    private ArrayList<FlashcardPackage> saveSets;
     private FlashcardPackage editedDeck;
 
     public EditDeckGUI(FlashcardPackage deck) {
@@ -66,6 +67,9 @@ public class EditDeckGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Saving.writeToFile(editedDeck);
+                if(editedDeck.getFlashcards().size() == 0){
+                    Saving.deleteFile(editedDeck.getName());
+                }
                 dispose();
             }
         });
