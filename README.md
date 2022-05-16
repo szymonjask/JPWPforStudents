@@ -37,6 +37,6 @@ zamienić je na język polski.
 Podpowiedzi: Kod należy umieścić w funkcji windowClosing w klasie
 MainGUI.java. Przydatne mogą okazać się funkcje
 `JOptionPane.showOptionDialog()`, `System.exit(0)` oraz
-`setDefaultCloseOperation()` użyta na obiekcie JFrame
+`setDefaultCloseOperation()` użyta na obiekcie JFrame.
 (użycie `setDefaultCloseOperation()` odbywa się w funkcji main w 
 klasie **MainGUI.java**, a nie w windowClosing, jak reszta kodu)
