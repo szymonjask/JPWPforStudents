@@ -2,7 +2,7 @@
 
 | Project Details   |      |
 | --- | --- | 
-| `Authors` | [Pater Bartłomiej]&nbsp;&nbsp;&nbsp;&nbsp; 405114 <br/>[Jaskólski Szymon]&nbsp;&nbsp;&nbsp; 400000
+| `Authors` | [Pater Bartłomiej]&nbsp;&nbsp;&nbsp;&nbsp; 405114 <br/>[Jaskólski Szymon]&nbsp;&nbsp;&nbsp; 405195
 |`College`| AGH University of Science and Technology
 |`Subject`| Języki Programowania Wyższego Poziomu
 
