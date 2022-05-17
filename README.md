@@ -26,7 +26,7 @@ Zmienna, w której powinna być umieszczona nazwa aktualnego zestawu, to
 currentDeckLabel(za pomocą metody `setText()`)
 
 ## Zadanie 3
-W klasie Lotto metoda **answer**  jest niepełna, brakuje kodu, który jest wykonywany kiedy odpowiedź jest poprawna. Przeanalizuj co się dzieje w przeciwnym przypadku i uzupełnił kod. Podpowiedź: chodzi o uzupełnienie kodu po `if(isCorrect)`
+W klasie Lotto metoda **answer**  jest niepełna, brakuje kodu, który jest wykonywany kiedy odpowiedź jest poprawna. Przeanalizuj co się dzieje w przeciwnym przypadku i uzupełnij kod. Podpowiedź: chodzi o uzupełnienie kodu po `if(isCorrect)`
 
 ## Zadanie 4
 Zrób tak, aby po naciśnięciu "X" w górnym prawym rogu w głównym
