@@ -1,10 +1,10 @@
-samochód,car,8,3,9
-silnik,engine,12,0,11
-sprzęgło,clutch,2,1,2
-skrzynia biegów,transmission,3,2,3
-koło,wheel,4,1,3
+samochód,car,9,3,10
+silnik,engine,13,0,12
+sprzęgło,clutch,3,1,3
+skrzynia biegów,transmission,4,2,4
+koło,wheel,3,2,3
 opona,tire,2,0,1
 chłodnica,cooler,1,0,0
-hamulec,brake,6,3,6
+hamulec,brake,10,3,10
 płyn hamulcowy,brake fluid,2,1,2
-klimatyzacja,air conditioning,1,2,1
+klimatyzacja,air conditioning,2,2,2

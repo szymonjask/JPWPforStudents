@@ -47,10 +47,6 @@ public class NewFlashcardsGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(wordsList.size() > 0 && !nameField.getText().strip().isEmpty()){
-                    Set<Flashcard> set = new HashSet<>(wordsList);
-                    System.out.println(set);
-                    wordsList.clear();
-                    wordsList.addAll(set);
                     FlashcardPackage newDeck = new FlashcardPackage(wordsList, nameField.getText().strip());
                     Saving.writeToFile(newDeck);
                     nameField.setText("");

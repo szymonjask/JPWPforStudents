@@ -63,6 +63,7 @@ public class MainGUI {
             myDecksButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    ownSets = Saving.readAll("saves");
                     if (ownSets.size()>0) {
                         try {
                             ownSets = Saving.readAll("saves");
@@ -74,6 +75,8 @@ public class MainGUI {
                         } catch (NullPointerException ed) {
 
                         }
+                    }else{
+                        System.out.println("Brak wlasnych fiszek");
                     }
                 }
             });
@@ -361,7 +364,7 @@ public class MainGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        // Zad. 4 (1/2) - jedna linijka kodu tutaj, reszta nizej \/
+        // Zad. 4 - (1/2) tylko jedna linijka kodu tu jest potrzebna, reszta nizej \/
         frame.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
@@ -370,7 +373,7 @@ public class MainGUI {
 
             @Override
             public void windowClosing(WindowEvent e) {
-                // Zad. 4 (2/2)
+                // Zad. 4 - (2/2)
 
             }
 

@@ -26,8 +26,6 @@ public class EditDeckGUI extends JFrame {
 
     public EditDeckGUI(FlashcardPackage deck) {
         setContentPane(panel1);
-        // Jak sie edytuje zestaw i nie zatwierdzi zmian, to plik csv nie zostanie zmodyfikowany, ale zestaw
-        // w aplikacji zostanie zmodyfikowany, a raczej tak nie powinno byc :|
         String newName = deck.getName();
         System.out.println(deck.getFlashcards());
         editedDeck = deck;

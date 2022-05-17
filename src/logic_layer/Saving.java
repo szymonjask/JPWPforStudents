@@ -112,7 +112,10 @@ public class Saving {
                 String name = Objects.requireNonNull(folder.list())[i].split("\\.")[0];
                 if(folderName.equals("saves")) {
                     FlashcardPackage pack = Saving.readFile(name);
-                    sets.add(pack);
+                    if(pack.getFlashcards().size()>0) {
+                        sets.add(pack);
+                    }
+
                 } else if (folderName.equals("basicSets")) {
                     FlashcardPackage pack = Saving.readBasic(name);
                     sets.add(pack);
