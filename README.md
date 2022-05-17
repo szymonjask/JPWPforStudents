@@ -12,7 +12,7 @@ Wystarczy mieć Jave i pobrać repo, najlepiej do IntelliJ.
 ## Zadanie 1
 Aplikacja posiada dwa tryby wyświetlania fiszek w menu głównym.
 Łatwy oraz trudny. Zmodyfikuj program tak, aby wyświetlał tylko
-tryb łatwy.
+tryb trudny.
 Podpowiedzi: Poszczególne tryby są zawarte w zmiennych easyMode oraz
 hardMode. Wybieranie trybu odbywa się w funkcji `refresh()` w klasie
 **MainGUI.java**
